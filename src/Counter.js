@@ -6,9 +6,9 @@ function Counter({ count, setCount }) {
       <p style={styles.label}>лічильник</p>
       <div style={styles.display}>{count}</div>
       <div style={styles.buttons}>
-        <button style={styles.btn} onClick={() => setCount(count - 1)}>−</button>
-        <button style={{ ...styles.btn, ...styles.reset }} onClick={() => setCount(0)}>reset</button>
-        <button style={styles.btn} onClick={() => setCount(count + 1)}>+</button>
+        <button style={{...styles.btn, ...styles.minus}} onClick={() => setCount(count - 1)}>−</button>
+        <button style={{...styles.btn, ...styles.reset}} onClick={() => setCount(0)}>reset</button>
+        <button style={{...styles.btn, ...styles.plus}} onClick={() => setCount(count + 1)}>+</button>
       </div>
     </div>
   );
@@ -17,23 +17,24 @@ function Counter({ count, setCount }) {
 const styles = {
   card: {
     textAlign: 'center',
-    padding: '48px',
-    border: '1px solid #2a2a4a',
-    borderRadius: '12px',
-    background: 'rgba(255,255,255,0.03)',
+    padding: '56px',
+    border: '1px solid #3a3a6a',
+    borderRadius: '16px',
+    background: 'rgba(255,255,255,0.05)',
+    boxShadow: '0 0 40px rgba(85,85,255,0.08)',
   },
   label: {
     margin: '0 0 16px',
     fontSize: '0.75rem',
-    letterSpacing: '0.2em',
+    letterSpacing: '0.25em',
     textTransform: 'uppercase',
-    color: '#5555ff',
+    color: '#7777cc',
   },
   display: {
-    fontSize: '5rem',
+    fontSize: '6rem',
     fontWeight: '700',
-    color: '#e0e0ff',
-    margin: '0 0 32px',
+    color: '#ffffff',
+    margin: '0 0 36px',
     lineHeight: 1,
   },
   buttons: {
@@ -47,9 +48,17 @@ const styles = {
     border: '1px solid #3a3a6a',
     borderRadius: '8px',
     background: 'transparent',
-    color: '#a0a0ff',
     fontSize: '1.4rem',
     cursor: 'pointer',
+    transition: 'all 0.15s ease',
+  },
+  minus: {
+    color: '#ff6b6b',
+    borderColor: '#ff6b6b44',
+  },
+  plus: {
+    color: '#6bffb8',
+    borderColor: '#6bffb844',
   },
   reset: {
     width: 'auto',
@@ -57,6 +66,7 @@ const styles = {
     fontSize: '0.75rem',
     letterSpacing: '0.1em',
     color: '#555588',
+    borderColor: '#2a2a4a',
   },
 };
 
