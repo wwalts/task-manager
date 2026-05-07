@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Header from './Header';
 import Counter from './Counter';
 
+const unusedVar = 'test'; // ESLint покаже попередження
+console.log('Режим:', process.env.REACT_APP_MODE);
+
 function App() {
   const [count, setCount] = useState(0);
 
